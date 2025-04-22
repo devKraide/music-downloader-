@@ -20,7 +20,11 @@ class YoutubeDownloader:
         self.url_var = StringVar()
         self.status_var = StringVar()
         self.status_var.set("Ready to download")
-        self.download_path = os.path.join(os.path.expanduser("~"), "Downloads")
+        # Changed default path to local 'downloads' folder
+        self.download_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "downloads")
+        # Create downloads directory if it doesn't exist
+        if not os.path.exists(self.download_path):
+            os.makedirs(self.download_path)
         
         # Interface
         self._create_widgets()
