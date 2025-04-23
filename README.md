@@ -52,7 +52,7 @@ python youtube_music_downloader.py
 
 ## 📷 Screenshots
 
-![Application Screenshot](assets/screenshot.png)
+![Application Screenshot](assets/appWorking.png)
 
 *Main application window showing download in progress*
 
