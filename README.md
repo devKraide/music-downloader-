@@ -1,6 +1,6 @@
 # 🎵 YouTube Music Downloader
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.6+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-orange.svg)
 
@@ -10,10 +10,12 @@ A beautiful, user-friendly desktop application to download and convert YouTube v
 
 - 🔍 Simple and intuitive graphical user interface
 - 🎧 High-quality MP3 conversion (192kbps)
-- 📁 Custom download location selection
-- 📊 Real-time download progress tracking
-- ⚠️ Comprehensive error handling
-- 🔄 Multi-threading to keep UI responsive during downloads
+- 📁 Smart default download location (local 'downloads' folder)
+- 📊 Detailed download progress tracking (speed, ETA, percentage)
+- ⚠️ Enhanced error handling with detailed feedback
+- 🔄 Multi-threading for responsive UI during downloads
+- 🛠️ Automatic retry mechanism for reliable downloads
+- 📝 Clear status updates throughout the download process
 
 ## 📋 Requirements
 
@@ -45,28 +47,31 @@ pip install yt-dlp
 python youtube_music_downloader.py
 ```
 
-2. Paste a YouTube URL into the input field.
-3. Select your download folder (optional).
-4. Click "Baixar" (Download) button.
-5. Wait for the download and conversion to complete!
+2. Paste a YouTube URL into the input field
+3. (Optional) Click "Select folder" to choose a custom download location, or use the default 'downloads' folder
+4. Click "Download" button
+5. Monitor the progress with real-time status updates
+6. Use the "Clear" button to reset the interface for your next download
 
 ## 📷 Screenshots
 
 ![Application Screenshot](assets/appWorking.png)
 
-*Main application window showing download in progress*
+_Main application window showing download in progress_
 
 ## 🛠️ How It Works
 
-The application uses yt-dlp (an improved fork of youtube-dl) to download videos from YouTube and extract their audio. FFmpeg then converts the audio to MP3 format. The entire process runs in a separate thread to keep the UI responsive.
+The application uses yt-dlp (an improved fork of youtube-dl) to download videos from YouTube and extract their audio. It includes smart error handling with automatic retries and detailed error messages. The download process runs in a separate thread to keep the UI responsive, and provides real-time feedback including download speed, estimated time remaining, and progress percentage.
 
 ## ⚙️ Customization
 
 You can modify these settings in the code:
 
 - Audio quality (currently set to 192kbps)
-- Output file naming format
+- Number of download retries (currently set to 5)
+- Socket timeout (currently set to 30 seconds)
 - Default download directory
+- Output file naming format
 
 ## 🤝 Contributing
 
